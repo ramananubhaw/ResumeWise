@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { User } from '../models/users.model.ts'; // Assuming your model is here
+import { User } from '../models/users.model.js'; // Assuming your model is here
 import bcrypt from 'bcryptjs';
 
 // Configuration Constants
@@ -11,7 +11,7 @@ const JWT_EXPIRES_IN = '24h';
 const COOKIE_OPTIONS = {
     httpOnly: true, 
     secure: process.env.NODE_ENV === 'production', 
-    sameSite: 'strict' as const, 
+    sameSite: 'none' as const,
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
 };
 
@@ -37,7 +37,7 @@ const authController = {
             res.status(500).json({ message: 'Server error fetching user data.' });
         }
     },
-    
+
     signup: async (req: Request, res: Response) => {
         // Updated destructuring to match schema: name, email, password
         const { email, password, name } = req.body;
@@ -139,7 +139,7 @@ const authController = {
         // Clear the JWT cookie by setting it to an empty string and immediately expiring it
         res.clearCookie('jwt', { 
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict' as const,
+            sameSite: 'none' as const,
             path: '/', // Ensure the path matches the original set path
         }); 
         res.status(200).json({ message: 'Logout successful.' });

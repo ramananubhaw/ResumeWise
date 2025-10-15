@@ -1,7 +1,7 @@
 import { Router } from "express";
 import multer from "multer";
-import screeningController from "../controllers/screening.controllers.ts";
-import { verifyToken } from "../middlewares/auth.middleware.ts";
+import screeningController from "../controllers/screening.controllers.js";
+import { verifyToken } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 

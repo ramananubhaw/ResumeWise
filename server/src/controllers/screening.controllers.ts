@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import ScreeningSchema from "../models/screening.model.ts";
+import ScreeningSchema from "../models/screening.model.js";
 import axios from "axios";
 import { PDFParse }  from "pdf-parse";
 import mammoth from "mammoth";
@@ -13,7 +13,7 @@ dotenv.config();
 // Load the prompt template from a file
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const promptTemplatePath = path.join(__dirname, '../config/prompt.txt');
+const promptTemplatePath = path.join(__dirname, '../../prompt.txt');
 const promptTemplate = fs.readFileSync(promptTemplatePath, 'utf-8');
 
 // NOTE: This controller contains the complex logic for file processing and LLM calls.
