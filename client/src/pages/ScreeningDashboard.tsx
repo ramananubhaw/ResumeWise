@@ -89,7 +89,7 @@ const ScreeningDashboard: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow max-w-7xl mx-auto w-full p-4 sm:p-6 lg:p-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Resume Screening Dashboard</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center md:text-left">Resume Screening Dashboard</h1>
         
         {/* Conditional rendering based on state */}
         {results ? (

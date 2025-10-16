@@ -158,7 +158,7 @@ const ScreeningForm: React.FC<ScreeningFormProps> = ({ onSubmit, isLoading, erro
 
     return (
         <div className="bg-white shadow-xl rounded-lg p-6">
-            <h2 className="text-2xl font-semibold mb-6">Upload & Analyze</h2>
+            <h2 className="text-2xl text-center md:text-left font-semibold mb-6">Upload & Analyze</h2>
             
             {/* Display Error Message */}
             {error && (
@@ -169,7 +169,7 @@ const ScreeningForm: React.FC<ScreeningFormProps> = ({ onSubmit, isLoading, erro
             
             <form onSubmit={handleSubmit} className="space-y-6">
 
-                <div className='flex justify-between items-start gap-x-4'>
+                <div className='flex flex-col gap-y-4 md:flex-row justify-between items-start gap-x-4'>
                     {/* ---------- RESUME INPUT AREA ---------- */}
                     <div className="border p-4 rounded-lg bg-gray-50 flex-1">
                         <h3 className="text-lg font-medium mb-3">1. Resume Input</h3>
